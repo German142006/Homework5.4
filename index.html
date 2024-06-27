@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JS в HTML</title>
+</head>
+
+<body>
+
+  <script>
+    
+// Запрашиваем у пользователя число
+let number = parseInt(prompt("Введите целое число:"));
+
+// Функция для проверки, является ли число простым
+function isPrime(num) {
+    if (num <= 1) {
+        return false;
+    }
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+// Проверяем введенное значение на корректность
+if (isNaN(number)) {
+    console.log("Введите корректное целое число.");
+} else {
+    // Проверяем, является ли число простым
+    if (isPrime(number)) {
+        console.log(number + " является простым числом.");
+    } else {
+        console.log(number + " не является простым числом.");
+    }
+}
+
+  </script>
+
+</body>
+
+</html>
